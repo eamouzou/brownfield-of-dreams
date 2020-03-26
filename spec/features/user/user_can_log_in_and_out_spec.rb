@@ -4,7 +4,7 @@ require 'rails_helper'
 
 describe 'User' do
   it 'user can sign in', :vcr do
-    user = create(:user)
+    user = create(:user, github_token: ENV['GITHUB_USER_TOKEN'])
 
     visit '/'
 
@@ -23,9 +23,8 @@ describe 'User' do
     expect(page).to have_content(user.last_name)
   end
 
-  it 'can log out', :js, :vcr do
-    user = create(:user)
-
+  it 'can log out', :vcr do
+    user = create(:user, github_token: ENV['GITHUB_USER_TOKEN'])
     visit login_path
 
     fill_in 'session[email]', with: user.email
@@ -41,11 +40,11 @@ describe 'User' do
 
     expect(current_path).to eq(root_path)
     expect(page).to_not have_content(user.first_name)
-    expect(page).to have_content('SIGN IN')
+    expect(page).to have_content('Sign In')
   end
 
   it 'is shown an error when incorrect info is entered', :vcr do
-    user = create(:user)
+    user = create(:user, github_token: ENV['GITHUB_USER_TOKEN'])
     fake_email = 'email@email.com'
     fake_password = '123'
 
