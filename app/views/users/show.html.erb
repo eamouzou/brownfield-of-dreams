@@ -7,6 +7,19 @@
     <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
     <li> <%= current_user.email%> </li>
   </ul>
+  <section class='github'>
+    <h1>Github</h1>
+    <section class='repos'>
+      <h3>Repositories</h3>
+      <ul>
+      <% search_results.user_repos.each do |repo| %>
+        <section class='repo'>
+          <li> <%= link_to repo.name, repo.html_url %> </li>
+        </section>
+      <% end %>
+    </ul>
+    </section>
+  </section>
   <section>
     <h1>Bookmarked Segments</h1>
   </section>
