@@ -2,22 +2,25 @@ require 'rails_helper'
 
 RSpec.describe 'A registered user' do
 
-  it "I visit dashboard and see github section" do
-    user = create(:user, github_token: "token acbee3261cd728ee327aa3d8379b84a774634edf")
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+  it "I visit dashboard and see github section", :vcr do
+    user = create(:user, github_token: ENV['GITHUB_USER_TOKEN'])
+    visit login_path
 
-    visit '/dashboard'
+    fill_in'session[email]', with: user.email
+    fill_in'session[password]', with: user.password
+    click_on 'Log In'
+
+    expect(current_path).to eq(dashboard_path)
 
     within '.github' do
       expect(page).to have_content("Github")
       expect(page).to have_content("Repositories")
-      # expect(page).to have_link("Repo 1 link - name")
-      # expect(page).to have_link("Repo 2 link - name")
-      # expect(page).to have_link("Repo 3 link - name")
-      # expect(page).to have_link("Repo 4 link - name")
-      # expect(page).to have_link("Repo 5 link - name")
       expect(page).to have_css('.repos')
       expect(page).to have_css('.repo', count: 5)
+    end
+
+    within(first('.repo')) do
+     expect(page).to have_link('activerecord-obstacle-course', href: 'https://github.com/DavidHoltkamp1/activerecord-obstacle-course')
     end
   end
 end
