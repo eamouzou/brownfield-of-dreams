@@ -2,7 +2,6 @@ class GithubService
 
   def initialize(github_token)
     @github_token = github_token
-
   end
 
   def get_repos
