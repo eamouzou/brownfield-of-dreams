@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  def show; end
+
+  def show
+    render locals: {
+      search_results: GithubSearch.new(current_user.github_token)
+    }
+  end
 
   def new
     @user = User.new

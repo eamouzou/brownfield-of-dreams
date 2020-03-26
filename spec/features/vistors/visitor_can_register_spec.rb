@@ -27,6 +27,9 @@ describe 'vister can create an account', :js do
     fill_in 'user[password_confirmation]', with: password
 
     click_on 'Create Account'
+    user = User.last
+    user.github_token = ENV['GITHUB_USER_TOKEN']
+
 
     expect(current_path).to eq(dashboard_path)
 
