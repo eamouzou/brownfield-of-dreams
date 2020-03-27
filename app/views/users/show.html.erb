@@ -12,12 +12,22 @@
     <section class='repos'>
       <h3>Repositories</h3>
       <ul>
-      <% search_results.user_repos.each do |repo| %>
-        <section class='repo'>
-          <li> <%= link_to repo.name, repo.html_url %> </li>
-        </section>
-      <% end %>
-    </ul>
+        <% search_results.user_repos.each do |repo| %>
+          <section class='repo'>
+            <li> <%= link_to repo.name, repo.html_url %> </li>
+          </section>
+        <% end %>
+      </ul>
+    </section>
+    <section class='followers'>
+      <h3>Followers</h3>
+      <ul>
+        <% search_results.user_followers.each do |follower| %>
+          <section class='follower'>
+            <li> <%= link_to follower.login, follower.html_url %> </li>
+          </section>
+        <% end %>
+      </ul>
     </section>
   </section>
   <section>

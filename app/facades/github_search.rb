@@ -10,4 +10,11 @@ class GithubSearch
       Repo.new(repo_data)
     end
   end
+
+  def user_followers
+    service = GithubService.new(@github_token)
+    service.get_followers.map do |follower_data|
+      Follower.new(follower_data)
+    end 
+  end
 end
