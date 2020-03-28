@@ -29,6 +29,16 @@
         <% end %>
       </ul>
     </section>
+    <section class='followings'>
+      <h3>Following</h3>
+      <ul>
+        <% search_results.user_followings.each do |following| %>
+          <section class='following'>
+            <li> <%= link_to following.login, following.html_url %> </li>
+          </section>
+        <% end %>
+      </ul>
+    </section>
   </section>
   <section>
     <h1>Bookmarked Segments</h1>

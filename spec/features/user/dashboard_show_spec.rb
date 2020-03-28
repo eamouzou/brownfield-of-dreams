@@ -44,4 +44,27 @@ RSpec.describe 'A registered user' do
       expect(page).to have_link('PaulDebevec', href: 'https://github.com/PaulDebevec')
     end
   end
+
+  it "I see github following section on the user dashboard", :vcr do
+    user = create(:user, github_token: ENV['GITHUB_USER_TOKEN'])
+    visit login_path
+
+    fill_in'session[email]', with: user.email
+    fill_in'session[password]', with: user.password
+    click_on 'Log In'
+
+    expect(current_path).to eq(dashboard_path)
+
+    within '.github' do
+      expect(page).to have_content("Following")
+      expect(page).to have_css('.followings')
+    end
+
+    within '.followings' do
+      expect(page).to have_link('philjdelong', href: 'https://github.com/philjdelong')
+      expect(page).to have_link('PaulDebevec', href: 'https://github.com/PaulDebevec')
+      expect(page).to have_link('BrianZanti', href: 'https://github.com/BrianZanti')
+      expect(page).to have_link('dionew1', href: 'https://github.com/dionew1')
+    end
+  end
 end
