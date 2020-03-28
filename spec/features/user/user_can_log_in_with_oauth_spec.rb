@@ -18,6 +18,8 @@ RSpec.describe 'Log in with OAuth' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit '/dashboard'
+    
+    stub_to_test_omniauth
 
     click_on("Connect to GitHub")
 
