@@ -1,23 +1,23 @@
 {
-  "application.js": "/packs-test/js/application-f4cbc40a51d6ec471dee.js",
-  "application.js.map": "/packs-test/js/application-f4cbc40a51d6ec471dee.js.map",
-  "controllers/tutorials_controller.js": "/packs-test/js/controllers/tutorials_controller-d104a57edd064c3a9d66.js",
-  "controllers/tutorials_controller.js.map": "/packs-test/js/controllers/tutorials_controller-d104a57edd064c3a9d66.js.map",
+  "application.js": "/packs-test/js/application-60c7bb285586d5c88f96.js",
+  "application.js.map": "/packs-test/js/application-60c7bb285586d5c88f96.js.map",
+  "controllers/tutorials_controller.js": "/packs-test/js/controllers/tutorials_controller-401a0331faa33455d80a.js",
+  "controllers/tutorials_controller.js.map": "/packs-test/js/controllers/tutorials_controller-401a0331faa33455d80a.js.map",
   "entrypoints": {
     "application": {
       "js": [
-        "/packs-test/js/application-f4cbc40a51d6ec471dee.js"
+        "/packs-test/js/application-60c7bb285586d5c88f96.js"
       ],
       "js.map": [
-        "/packs-test/js/application-f4cbc40a51d6ec471dee.js.map"
+        "/packs-test/js/application-60c7bb285586d5c88f96.js.map"
       ]
     },
     "controllers/tutorials_controller": {
       "js": [
-        "/packs-test/js/controllers/tutorials_controller-d104a57edd064c3a9d66.js"
+        "/packs-test/js/controllers/tutorials_controller-401a0331faa33455d80a.js"
       ],
       "js.map": [
-        "/packs-test/js/controllers/tutorials_controller-d104a57edd064c3a9d66.js.map"
+        "/packs-test/js/controllers/tutorials_controller-401a0331faa33455d80a.js.map"
       ]
     }
   }
