@@ -15,6 +15,13 @@ class GithubSearch
     service = GithubService.new(@github_token)
     service.get_followers.map do |follower_data|
       Follower.new(follower_data)
-    end 
+    end
+  end
+
+  def user_followings
+    service = GithubService.new(@github_token)
+    service.get_followings.map do |following_data|
+      Following.new(following_data)
+    end
   end
 end
