@@ -7,6 +7,12 @@
     <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
     <li> <%= current_user.email%> </li>
   </ul>
+
+  <% if current_user.github_token == nil %>
+    <%= button_to "Connect to GitHub", "/auth/github" %>
+  <% end %>
+
+<% if current_user.github_token != nil %>
   <section class='github'>
     <h1>Github</h1>
     <section class='repos'>
@@ -40,6 +46,8 @@
       </ul>
     </section>
   </section>
+<% end %>
+
   <section>
     <h1>Bookmarked Segments</h1>
   </section>

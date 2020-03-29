@@ -26,6 +26,7 @@ gem 'google-api-client'
 gem 'jquery'
 gem 'omniauth-census', git: 'https://github.com/turingschool-projects/omniauth-census'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-github'
 gem 'rubocop'
 gem 'will_paginate'
 gem 'yt', '~> 0.29.1'
@@ -47,7 +48,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'webmock'  
+  gem 'webmock'
 end
 
 group :development do
