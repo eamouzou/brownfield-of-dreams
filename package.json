@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/webpacker": "^5.0.1",
+    "babel-core": "^6.26.3",
     "babel-loader": "7",
     "caniuse-lite": "^1.0.30000697",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",

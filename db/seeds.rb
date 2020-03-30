@@ -1,4 +1,7 @@
 # frozen_string_literal: true
+Tutorial.destroy_all
+Video.destroy_all
+User.destroy_all
 
 prework_tutorial_data = {
   'title' => 'Back End Engineering - Prework',
